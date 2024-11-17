@@ -245,9 +245,14 @@ def main(genomes, config):
 
         base.move()
         draw_window(win,birds, pipes, base, score,GEN)
+
+        if score >= 20:
+            run = False
+            print(f"Game Over! Score: {score}")
+            print(f"It took the model {GEN} generations to learn the game")
+            pygame.quit()
+            quit()
     
-
-
 
 
 def run(config_file):
